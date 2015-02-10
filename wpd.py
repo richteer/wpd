@@ -57,7 +57,7 @@ class Wpd():
 		# TODO: Make this better
 		ind = random.randint(0,len(self.pictures)-1)
 		print("Picked " + str(ind))
-		with open(self.pictures[ind]["name"],"rb") as f:
+		with open(self.config["base_dir"] + "/" + self.pictures[ind]["name"],"rb") as f:
 			ret = f.read()
 		return ret
 
