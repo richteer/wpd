@@ -65,7 +65,7 @@ class Wpd():
 		text = csock.recv(200)
 		print("received message from {} : {}".format(str(addr), str(text)))
 		if text.decode("utf-8").startswith("GET"):
-			csock.send(self.get_image())
+			csock.sendall(self.get_image())
 		csock.close()
 
 def main():
